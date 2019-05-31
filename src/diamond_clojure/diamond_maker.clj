@@ -27,4 +27,4 @@
   (+ 1 (* 2 (- (get-index-for-char char) 1))))
 
 (defn gen-middle-spaces [char]
-  (str " "))
+  (apply str (take (calc-middle-spaces char) (repeat " "))))

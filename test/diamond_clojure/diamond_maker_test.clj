@@ -56,14 +56,18 @@
   )
 
 
-(deftest test-generate-middle-spaces
+(deftest test-calc-middle-spaces
   (testing "correct middle space value"
     (is (= 1 (calc-middle-spaces "B")))
     (is (= 3 (calc-middle-spaces "C")))
     (is (= 5 (calc-middle-spaces "D")))
     (is (= 7 (calc-middle-spaces "E")))
     )
+  )
 
+(deftest test-generate-middle-spaces
   (testing "generate actual spaces"
-    (is (= (str " " (gen-middle-spaces "B")))))
+    (is (= (str " ") (gen-middle-spaces "B")))
+    (is (= (str "   ") (gen-middle-spaces "C")))
+    )
   )
