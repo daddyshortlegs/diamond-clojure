@@ -54,7 +54,5 @@
 (defn diamond-maker [char]
   (if (= char "A")
     (str "A")
-    (draw-body char)
-
-    )
+    (draw-body char))
   )

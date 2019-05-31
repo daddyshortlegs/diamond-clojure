@@ -13,6 +13,10 @@
 
   (testing "should return diamond for C"
     (is (= "  A\n B B\nC   C\n B B\n  A\n" (diamond-maker "C"))))
+
+  (testing "should return diamond for D"
+    (is (= "   A\n  B B\n C   C\nD     D\n C   C\n  B B\n   A\n" (diamond-maker "D"))))
+
   )
 
 
