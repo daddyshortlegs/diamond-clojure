@@ -18,9 +18,11 @@
   (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char)
   )
 
+(defn calc-leading-spaces [char index]
+  (- (get-index-for-char char) index))
+
 (defn gen-leading-spaces [char index]
-  (def num-spaces (- (get-index-for-char char) index))
-  (apply str (take num-spaces (repeat " ")))
+  (apply str (take (calc-leading-spaces char index) (repeat " ")))
   )
 
 (defn calc-middle-spaces [char]
