@@ -7,13 +7,12 @@
   (testing "should return A"
     (is (= "A" (diamond-maker "A"))))
 
-  (testing "should return diamond"
-    (def expected " A\nB B\n A\n")
-    (is (= expected (diamond-maker "B"))))
+  ;(testing "should return diamond"
+  ;  (def expected " A\nB B\n A\n")
+  ;  (is (= expected (diamond-maker "B"))))
 
-  ;(testing "should return diamond for C"
-  ;  (def expected "  A\n B B\nC   C\n B B\n   A\n")
-  ;  (is (= expected (diamond-maker "C"))))
+  (testing "should return diamond for C"
+    (is (= "  A\n B B\nC   C\n B B\n  A\n" (diamond-maker "C"))))
   )
 
 
