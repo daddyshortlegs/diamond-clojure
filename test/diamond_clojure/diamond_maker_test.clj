@@ -55,9 +55,10 @@
     )
   )
 
-(defn calc-middle-spaces [char]
-  (+ 1 (* 2 (- (get-index-for-char char) 1))))
-
 (deftest test-generate-middle-spaces
   (testing "correct middle space value"
-    (is (= 5 (calc-middle-spaces "D")))))
+    (is (= 1 (calc-middle-spaces "B")))
+    (is (= 3 (calc-middle-spaces "C")))
+    (is (= 5 (calc-middle-spaces "D")))
+    (is (= 7 (calc-middle-spaces "E")))
+    ))

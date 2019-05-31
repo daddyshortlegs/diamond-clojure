@@ -22,3 +22,6 @@
   (def num-spaces (- (get-index-for-char char) index))
   (apply str (take num-spaces (repeat " ")))
   )
+
+(defn calc-middle-spaces [char]
+  (+ 1 (* 2 (- (get-index-for-char char) 1))))
