@@ -23,6 +23,9 @@
     (is (= 1 (get-index-for-char "B")))
     (is (= 25 (get-index-for-char "Z")))
     )
+
+  (testing "should get char for index"
+    (is (= (str "A") (get-char-for-index 0))))
   )
 
 
@@ -72,7 +75,16 @@
     )
   )
 
-(deftest test-generate-line
-  (testing "output"
-    (is (= (str "D     D") (draw-line "D" 3)))
-    ))
+;(deftest test-generate-line
+;  (testing "D"
+;    (is (= (str "D     D\n") (draw-line "D" 3)))
+;    (is (= (str " C   C\n") (draw-line "D" 2)))
+;    (is (= (str "  B B\n") (draw-line "D" 1)))
+;    )
+;
+;  (testing "C"
+;    (is (= (str "C   C\n") (draw-line "C" 2)))
+;    (is (= (str " B B\n") (draw-line "C" 1)))
+;    )
+;
+;  )

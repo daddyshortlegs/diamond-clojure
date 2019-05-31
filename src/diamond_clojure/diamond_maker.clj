@@ -13,6 +13,9 @@
   (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char)
   )
 
+(defn get-char-for-index [index]
+  (str "A"))
+
 (defn calc-leading-spaces [char index]
   (- (get-index-for-char char) index))
 
@@ -30,4 +33,4 @@
   (gen-spaces (calc-middle-spaces char )))
 
 (defn draw-line [char index]
-  (str "D     D"))
+  (str (gen-leading-spaces char index) char (gen-middle-spaces char) char "\n"))
