@@ -21,12 +21,15 @@
 (defn calc-leading-spaces [char index]
   (- (get-index-for-char char) index))
 
+(defn gen-spaces [num]
+  (apply str (take num (repeat " "))))
+
 (defn gen-leading-spaces [char index]
-  (apply str (take (calc-leading-spaces char index) (repeat " ")))
+  (gen-spaces (calc-leading-spaces char index))
   )
 
 (defn calc-middle-spaces [char]
   (+ 1 (* 2 (- (get-index-for-char char) 1))))
 
 (defn gen-middle-spaces [char]
-  (apply str (take (calc-middle-spaces char) (repeat " "))))
+  (gen-spaces (calc-middle-spaces char )))
