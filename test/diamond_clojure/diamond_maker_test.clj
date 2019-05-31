@@ -75,16 +75,16 @@
     )
   )
 
-;(deftest test-generate-line
-;  (testing "D"
-;    (is (= (str "D     D\n") (draw-line "D" 3)))
-;    (is (= (str " C   C\n") (draw-line "D" 2)))
-;    (is (= (str "  B B\n") (draw-line "D" 1)))
-;    )
-;
-;  (testing "C"
-;    (is (= (str "C   C\n") (draw-line "C" 2)))
-;    (is (= (str " B B\n") (draw-line "C" 1)))
-;    )
-;
-;  )
+(deftest test-generate-line
+  (testing "D"
+    (is (= (str "D     D\n") (draw-line "D" 3)))
+    (is (= (str " C   C\n") (draw-line "D" 2)))
+    (is (= (str "  B B\n") (draw-line "D" 1)))
+    )
+
+  (testing "C"
+    (is (= (str "C   C\n") (draw-line "C" 2)))
+    (is (= (str " B B\n") (draw-line "C" 1)))
+    )
+
+  )

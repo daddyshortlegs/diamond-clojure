@@ -33,4 +33,4 @@
   (gen-spaces (calc-middle-spaces char )))
 
 (defn draw-line [char index]
-  (str (gen-leading-spaces char index) char (gen-middle-spaces char) char "\n"))
+  (apply str (gen-leading-spaces char index) (get-char-for-index index) (gen-middle-spaces (get-char-for-index index)) (get-char-for-index index) "\n"))
