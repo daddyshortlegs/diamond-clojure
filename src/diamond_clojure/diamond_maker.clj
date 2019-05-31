@@ -14,7 +14,7 @@
   )
 
 (defn get-char-for-index [index]
-  (str "A"))
+  (str (.charAt "ABCDEFGHIJKLMNOPQRSTUVWXYZ" index)))
 
 (defn calc-leading-spaces [char index]
   (- (get-index-for-char char) index))
