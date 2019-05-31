@@ -25,3 +25,6 @@
 
 (defn calc-middle-spaces [char]
   (+ 1 (* 2 (- (get-index-for-char char) 1))))
+
+(defn gen-middle-spaces [char]
+  (str " "))

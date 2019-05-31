@@ -55,10 +55,15 @@
     )
   )
 
+
 (deftest test-generate-middle-spaces
   (testing "correct middle space value"
     (is (= 1 (calc-middle-spaces "B")))
     (is (= 3 (calc-middle-spaces "C")))
     (is (= 5 (calc-middle-spaces "D")))
     (is (= 7 (calc-middle-spaces "E")))
-    ))
+    )
+
+  (testing "generate actual spaces"
+    (is (= (str " " (gen-middle-spaces "B")))))
+  )
