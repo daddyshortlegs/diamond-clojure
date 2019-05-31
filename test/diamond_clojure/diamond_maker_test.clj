@@ -71,3 +71,8 @@
     (is (= (str "   ") (gen-middle-spaces "C")))
     )
   )
+
+(deftest test-generate-line
+  (testing "output"
+    (is (= (str "D     D") (draw-line "D" 3)))
+    ))

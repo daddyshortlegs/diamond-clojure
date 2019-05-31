@@ -3,11 +3,6 @@
 
 (use '[clojure.string :only [index-of]])
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
-
 (defn diamond-maker [char]
   (if (= char "A")
     (str "A")
@@ -33,3 +28,6 @@
 
 (defn gen-middle-spaces [char]
   (gen-spaces (calc-middle-spaces char )))
+
+(defn draw-line [char index]
+  (str "D     D"))
