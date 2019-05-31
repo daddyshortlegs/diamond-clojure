@@ -31,13 +31,16 @@
 (defn draw-line [char index]
   (apply str (gen-leading-spaces char index) (get-char-for-index index) (gen-middle-spaces (get-char-for-index index)) (get-char-for-index index) "\n"))
 
+(defn generate-tip [char]
+  (str (gen-leading-spaces char 0) "A\n"))
+
 (defn draw-body [char]
   (apply str
-         (gen-leading-spaces char 0) "A\n"
+         (generate-tip char)
          (draw-line char 1)
          (draw-line char 2)
          (draw-line char 1)
-         (gen-leading-spaces char 0) "A\n"
+         (generate-tip char)
          ))
 
 (defn diamond-maker [char]
