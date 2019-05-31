@@ -19,15 +19,29 @@
 
 (deftest test-find-index-for-char
   (testing "should get index for chars"
-    (is (= 1 (get-index-for-char "A")))
-    (is (= 2 (get-index-for-char "B")))
-    (is (= 26 (get-index-for-char "Z")))
+    (is (= 0 (get-index-for-char "A")))
+    (is (= 1 (get-index-for-char "B")))
+    (is (= 25 (get-index-for-char "Z")))
     )
   )
 
-(defn gen-leading-spaces [char index]
-  (str "   "))
+
+(defn gen-space-value [char index]
+  (- (get-index-for-char char) index)
+  )
+
+(deftest test-generate-space-value
+  (testing "correct spaces"
+    (is (= 3 (gen-space-value "D" 0)))
+    (is (= 2 (gen-space-value "D" 1)))))
+
+
 
 (deftest test-generate-leading-spaces
   (testing "correct spaces"
-    (is (= (str "   ") (gen-leading-spaces "D" 0)))))
+    (is (= (str "   ") (gen-leading-spaces "D" 0)))
+    (is (= (str "  ") (gen-leading-spaces "D" 1)))
+    (is (= (str " ") (gen-leading-spaces "D" 2)))
+    (is (= (str "") (gen-leading-spaces "D" 3)))
+    )
+  )

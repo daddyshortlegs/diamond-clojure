@@ -15,5 +15,10 @@
   )
 
 (defn get-index-for-char [char]
-  (+ 1 (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char))
+  (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char)
+  )
+
+(defn gen-leading-spaces [char index]
+  (def num-spaces (- (get-index-for-char char) index))
+  (apply str (take num-spaces (repeat " ")))
   )
