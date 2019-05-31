@@ -1,4 +1,4 @@
-(ns diamond-clojure.core
+(ns diamond-clojure.diamond_maker
   (:gen-class))
 
 (defn -main
