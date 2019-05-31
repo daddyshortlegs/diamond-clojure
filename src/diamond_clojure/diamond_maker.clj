@@ -19,8 +19,7 @@
   (apply str (take num (repeat " "))))
 
 (defn gen-leading-spaces [char index]
-  (gen-spaces (calc-leading-spaces char index))
-  )
+  (gen-spaces (calc-leading-spaces char index)))
 
 (defn calc-middle-spaces [char]
   (+ 1 (* 2 (- (get-index-for-char char) 1))))
