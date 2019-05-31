@@ -35,14 +35,19 @@
   (str (gen-leading-spaces char 0) "A\n"))
 
 (defn draw-top [char]
-  (apply str (for [x (range 1 (+ 1 (get-index-for-char char)))]
+  (apply str (for [x (range 1 (get-index-for-char char))]
     (draw-line char x))))
+
+(defn draw-bottom [char]
+  (apply str (for [x (range (get-index-for-char char) 0 -1)]
+    (draw-line char x))))
+
 
 (defn draw-body [char]
   (apply str
          (generate-tip char)
          (draw-top char)
-         (draw-line char 1)
+         (draw-bottom char)
          (generate-tip char)
          ))
 
