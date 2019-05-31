@@ -38,10 +38,19 @@
 
 
 (deftest test-generate-leading-spaces
-  (testing "correct spaces"
+  (testing "correct spaces for D"
+    (is (= (str " ") (gen-leading-spaces "B" 0)))
+
     (is (= (str "   ") (gen-leading-spaces "D" 0)))
     (is (= (str "  ") (gen-leading-spaces "D" 1)))
     (is (= (str " ") (gen-leading-spaces "D" 2)))
     (is (= (str "") (gen-leading-spaces "D" 3)))
+
+    (is (= (str "    ") (gen-leading-spaces "E" 0)))
+    (is (= (str "   ") (gen-leading-spaces "E" 1)))
+    (is (= (str "  ") (gen-leading-spaces "E" 2)))
+    (is (= (str " ") (gen-leading-spaces "E" 3)))
+    (is (= (str "") (gen-leading-spaces "E" 4)))
+
     )
   )
