@@ -2,7 +2,6 @@
   (:require [clojure.test :refer :all]
             [diamond-clojure.diamond_maker :refer :all]))
 
-(use '[clojure.string :only [index-of]])
 
 (deftest test-diamond-maker
   (testing "should return A"
@@ -17,9 +16,6 @@
   ;  (is (= expected (diamond-maker "C"))))
   )
 
-(defn get-index-for-char [char]
-  (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char)
-  )
 
 (deftest test-find-index-for-char
   (testing "should get index for chars"
@@ -28,3 +24,10 @@
     (is (= 26 (get-index-for-char "Z")))
     )
   )
+
+(defn gen-leading-spaces [char index]
+  (str "   "))
+
+(deftest test-generate-leading-spaces
+  (testing "correct spaces"
+    (is (= (str "   ") (gen-leading-spaces "D" 0)))))
