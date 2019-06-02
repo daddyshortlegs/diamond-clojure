@@ -3,13 +3,10 @@
 
 (use '[clojure.string :only [index-of]])
 
-
-
 (defn get-index-for-char [char]
-  (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char)
-  )
+  (index-of "ABCDEFGHIJKLMNOPQRSTUVWXYZ" char))
 
-(defn get-char-for-index [index]
+(defn char-for-index [index]
   (str (.charAt "ABCDEFGHIJKLMNOPQRSTUVWXYZ" index)))
 
 (defn calc-leading-spaces [char index]
@@ -28,27 +25,22 @@
   (gen-spaces (calc-middle-spaces char )))
 
 (defn draw-line [char index]
-  (apply str (gen-leading-spaces char index) (get-char-for-index index) (gen-middle-spaces (get-char-for-index index)) (get-char-for-index index) "\n"))
+  (apply str (gen-leading-spaces char index) (char-for-index index) (gen-middle-spaces (char-for-index index)) (char-for-index index) "\n"))
 
 (defn generate-tip [char]
   (str (gen-leading-spaces char 0) "A\n"))
 
+(defn draw [char r]
+  (apply str (for [x r] (draw-line char x))))
+
 (defn draw-top [char]
-  (apply str (for [x (range 1 (get-index-for-char char))]
-    (draw-line char x))))
+  (draw char (range 1 (get-index-for-char char))))
 
 (defn draw-bottom [char]
-  (apply str (for [x (range (get-index-for-char char) 0 -1)]
-    (draw-line char x))))
-
+  (draw char (range (get-index-for-char char) 0 -1)))
 
 (defn draw-body [char]
-  (apply str
-         (generate-tip char)
-         (draw-top char)
-         (draw-bottom char)
-         (generate-tip char)
-         ))
+  (apply str (generate-tip char) (draw-top char) (draw-bottom char) (generate-tip char)))
 
 (defn diamond-maker [char]
   (if (= char "A")

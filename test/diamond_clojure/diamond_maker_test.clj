@@ -83,7 +83,7 @@
     )
 
   (testing "should get char for index"
-    (is (= (str "A") (get-char-for-index 0))))
+    (is (= (str "A") (char-for-index 0))))
   )
 
 
